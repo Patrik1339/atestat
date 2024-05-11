@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cariera politica - Arnold Schwarzenegger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+        }
+
+        header {
+            background-color: #36c;
+            color: white;
+            padding: 5px;
+            text-align: center;
+	    margin-top: -20px;
+        }
+
+        nav {
+            background-color: #36c;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+	    margin-top: -20px;
+        }
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+	nav a:hover {
+	    background-color: #007acc;
+    	    transform: scale(1.1);
+	}
+
+        section {
+            padding: 20px;
+            background-color: white;
+            margin: 0 auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+	    font-size: 20px;
+	    margin-bottom: 100px;
+        }
+
+        footer {
+            background-color: #36c;
+            color: white;
+            opacity: 0.5;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+	.right-image {
+            float: right;
+            margin-left: 20px;
+	    margin-top: 100px;
+	    width: 400px;
+	    height: 300px;
+	    margin-right: 10px;
+        }
+	.left-image {
+            float: left;
+            margin-right: 20px;
+	    margin-top: 100px;
+	    height: 320px;
+	    width: 320px;
+	    margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body background="background.png">
+
+    <header>
+        <h1>Quiz - Arnold Schwarzenegger</h1>
+    </header>
+
+    <nav>
+        <a href="atestat.html">Înapoi la Pagina Principală</a>
+    </nav>
+    <section>
+        <form id="quiz">
+        <ol>
+            <li>
+                <h3>Întrebare 1: In ce an s-a nascut Arnold Schwarzenegger?</h3>
+                <input type="radio" name="intrebare1" value="a"> a) 1945<br>
+                <input type="radio" name="intrebare1" value="b"> b) 1947<br>
+                <input type="radio" name="intrebare1" value="c"> c) 1950<br>
+                <input type="radio" name="intrebare1" value="d"> d) 1943<br>
+            </li>
+            <li>
+                <h3>Întrebare 2: In ce an a castigat Mr. Universe?</h3>
+                <input type="radio" name="intrebare2" value="a"> a) 1969 <br>
+                <input type="radio" name="intrebare2" value="b"> b) 1960 <br>
+                <input type="radio" name="intrebare2" value="c"> c) 1962 <br>
+                <input type="radio" name="intrebare2" value="d"> d) 1968 <br>
+            </li>
+            <li>
+                <h3>Întrebare 3: In ce an a devenit guvernator?</h3>
+                <input type="radio" name="intrebare3" value="a"> a) 2003 <br>
+                <input type="radio" name="intrebare3" value="b"> b) 2004 <br>
+                <input type="radio" name="intrebare3" value="c"> c) 2005 <br>
+                <input type="radio" name="intrebare3" value="d"> d) 2006 <br>
+            </li>
+            <li>
+                <h3>Întrebare 4: Cati ani a fost guvernator"?</h3>
+                <input type="radio" name="intrebare4" value="a"> a) 9 <br>
+                <input type="radio" name="intrebare4" value="b"> b) 8 <br>
+                <input type="radio" name="intrebare4" value="c"> c) 7 <br>
+                <input type="radio" name="intrebare4" value="d"> d) 6 <br>
+            </li>
+        </ol>
+        <button type="button" onclick="verificaRaspunsurile()">Verificare</button>
+    </form>
+
+    <div id="rezultate"></div>
+
+    <script>
+            function verificaRaspunsurile() {
+                var raspunsuriCorecte = ["b", "d", "c", "a"];
+                var numarIntrebari = raspunsuriCorecte.length;
+                var form = document.getElementById("quiz");
+                var rezultateDiv = document.getElementById("rezultate");
+                var scor = 0;
+
+                for (var i = 0; i < numarIntrebari; i++) {
+                    var numeIntrebare = "intrebare" + (i + 1);
+                    var raspunsSelectat = form.elements[numeIntrebare].value;
+
+                    if (raspunsSelectat === raspunsuriCorecte[i]) {
+                        scor++;
+                    }
+                }
+
+                var rezultatFinal = "Ai răspuns corect la " + scor + " întrebări dintr-un total de " + numarIntrebari + ".";
+                rezultateDiv.innerHTML = rezultatFinal;
+            }
+    </script>
+    </section>
+
+    <footer>
+        <p>Quiz - Arnold Schwarzenegger</p>
+    </footer>
+
+</body>
+
+</html>
